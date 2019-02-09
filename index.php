@@ -26,18 +26,34 @@
 3. set height image
 4. upload image to server
 5. delete image in server
+6. insert embed youtube
 
  -->
 
   <div class="container">
 
-    <form action="getdata.php" method="post">
+    <form action="getdata.php" method="post" enctype="multipart/form-data">
 
-      <textarea class="ckeditor" name="editor"></textarea>
+      <textarea class="ckeditor" name="editor1" id="editor1"></textarea>
 
       <button type="submit" class="btn btn-primary pull-right" style="border-radius: 2px;margin-top: 15px;">Submit</button>
 
+
+<script type="text/javascript">
+ 
+  CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: 'ckeditor/ckfinder/ckfinder.html',
+    filebrowserImageBrowseUrl: 'ckeditor/ckfinder/ckfinder.html?Type=Images',
+    filebrowserUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    filebrowserImageUploadUrl: 'ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+    filebrowserWindowWidth : '1000',
+    filebrowserWindowHeight : '700'
+});
+ 
+</script>
+
     </form>
+    
   </div>
 
 </body>
